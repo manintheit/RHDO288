@@ -45,6 +45,7 @@ USER 1001
 # TODO: Set the default port for applications built using this image
 EXPOSE 8080
 
+RUN /usr/libexec/s2i/assemble
 
 # TODO: Set the default CMD for the image
- CMD ["/usr/libexec/s2i/usage"]
+CMD ["/usr/libexec/s2i/run"]
