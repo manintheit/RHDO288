@@ -1,5 +1,5 @@
 # builder
-FROM openshift/base-centos7
+FROM docker.io/openshift/base-centos7 
 
 # TODO: Put the maintainer name in the image metadata
 # LABEL maintainer="Your Name <your@email.com>"
@@ -31,7 +31,7 @@ COPY ./s2i/bin/ /usr/libexec/s2i
 
 # TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
 # RUN chown -R 1001:1001 /opt/app-root
-RUN /usr/libexec/s2i/assemble
+#RUN /usr/libexec/s2i/assemble
 
 # This default user is created in the openshift/base-centos7 image
 USER 1001
@@ -41,5 +41,5 @@ EXPOSE 8080
 
 
 # TODO: Set the default CMD for the image
-#CMD ["/usr/libexec/s2i/usage"]
-CMD ["/usr/libexec/s2i/run"]
+CMD ["/usr/libexec/s2i/usage"]
+#CMD ["/usr/libexec/s2i/run"]
