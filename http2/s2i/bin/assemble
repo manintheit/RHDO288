@@ -23,5 +23,5 @@ fi
 
 echo "---> Installing application source..."
 #cp -Rf /tmp/src/. ./
-cp -Rv /tmp/src/. /var/www/html
-
+cp -Rv /tmp/src/*.html /var/www/html
+echo "<h1>Hallo Welt!</h1>" > /var/www/html/hello.html
